@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>ffp</string>
+		<string>fml</string>
+	</array>
+	<key>name</key>
+	<string>FilterMeister</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>comment</key>
+			<string>Text string</string>
+			<key>match</key>
+			<string>".*?"</string>
+			<key>name</key>
+			<string>string.double.source.ffp</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Text string</string>
+			<key>match</key>
+			<string>'.*?'</string>
+			<key>name</key>
+			<string>string.single.source.ffp</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Single line comment</string>
+			<key>match</key>
+			<string>//.*$</string>
+			<key>name</key>
+			<string>comment.source.ffp</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>/\*</string>
+			<key>comment</key>
+			<string>Multi-line comment</string>
+			<key>end</key>
+			<string>\*/</string>
+			<key>name</key>
+			<string>comment.source.ffp</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Language defined constants.</string>
+			<key>match</key>
+			<string>true|false|NULL</string>
+			<key>name</key>
+			<string>constant.language.source.ffp</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Numeric Integer definition by https://github.com/abusalimov/SublimeCImproved/blob/master/C%20Improved.tmLanguage</string>
+			<key>match</key> <string>\s*(\b(0[xX][0-9a-fA-F]*|0[0-7]*|[1-9][0-9]*)[uU]?(ll?|LL?)?\b)</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key> <dict> <key>name</key> <string>constant.numeric.integer.ffp</string> </dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Numeric Float definition by https://github.com/abusalimov/SublimeCImproved/blob/master/C%20Improved.tmLanguage</string>
+			<key>match</key> <string>\s*(\b(([0-9]+\.[0-9]*)|(\.[0-9]+))([eE][+\-]?[0-9]+)?[fF]?\b)</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key> <dict> <key>name</key> <string>constant.numeric.float.ffp</string> </dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>The type of something: class, function, int, char, etc.</string>
+			<key>match</key>
+			<string>\s*\b(bool|char|double|float|int|long|unsigned|void)\b</string>
+			<key>name</key>
+			<string>storage.type.source.ffp</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>A storage modifier: static, final, abstract, etc.</string>
+			<key>match</key>
+			<string>\s*\b(const|static)\b</string>
+			<key>name</key>
+			<string>storage.modifier.source.ffp</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>The name is the name of a section/heading.</string>
+			<key>match</key>
+			<string>ForEveryPixel|ForEveryRow|ForEveryTile|OnCtl|OnFilterEnd|OnFilterStart</string>
+			<key>name</key>
+			<string>entity.name.section.source.ffp</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>support.constant.source.ffp</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>Constants (magic values) provided by the framework/library.</string>
+			<key>match</key>
+			<string>\s*\b(ANCHOR_BOTTOM|ANCHOR_LEFT|ANCHOR_RIGHT|ANCHOR_TOP|BITMAP|CA_ABOUT|CA_APPLY|CA_CANCEL|CA_NONE|CA_PREVIEW|CENTERIMAGE|CHECKBOX|COMBOBOX|CSIDL_APPDATA|CSIDL_COMMON_APPDATA|CSIDL_COMMON_PICTURES|CSIDL_COMMON_DOCUMENTS|CSIDL_DESKTOPDIRECTORY|CSIDL_MYPICTURES|CSIDL_PERSONAL|CTL_BACKGROUND|CTL_CANCEL|CTL_EDIT|CTL_FRAME|CTL_HOST|CTL_LOGO|CTL_OK|CTL_PREVIEW|CTL_PROGRESS|CTL_ZOOM|CTL_LAST_USER|EDIT|ERROR_SUCCESS|FME_CANCEL|FME_CLICKED|FME_CUSTOMEVENT|FME_KEYDOWN|FME_KEYUP|FME_MOUSEMOVE|FME_MOUSEOUT|FME_MOUSEOVER|FME_SIZE|FME_TIMER|FRAME|GROUPBOX|HKEY_CURRENT_USER|HKEY_LOCAL_MACHINE|ICON|IDYES|IMAGE|LISTBOX|MB_ICONERROR|MB_ICONINFORMATION|MB_ICONQUESTION|MB_ICONWARNING|MB_OK|MB_YESNO|MB_YESNOCANCEL|METAFILE|MODIFY|NONE|OFN_ALLOWMULTISELECT|OFN_CREATEPROMPT|OFN_DONTADDTORECENT|OFN_ENABLEHOOK|OFN_ENABLEINCLUDENOTIFY|OFN_ENABLESIZING|OFN_ENABLETEMPLATE|OFN_ENABLETEMPLATEHANDLE|OFN_EXPLORER|OFN_EXTENSIONDIFFERENT|OFN_FILEMUSTEXIST|OFN_FORCESHOWHIDDEN|OFN_HIDEREADONLY|OFN_LONGNAMES|OFN_NOCHANGEDIR|OFN_NODEREFERENCELINKS|OFN_NOLONGNAMES|OFN_NONETWORKBUTTON|OFN_NOREADONLYRETURN|OFN_NOTESTFILECREATE|OFN_NOVALIDATE|OFN_OVERWRITEPROMPT|OFN_PATHMUSTEXIST|OFN_READONLY|OFN_SHAREAWARE|OFN_SHOWHELP|OWNERDRAW|PUSHBUTTON|RADIOBUTTON|RECT|SCROLLBAR|STANDARD|STATICTEXT|TRACKBAR|VK_ADD|VK_SUBTRACT|AllModes|BitmapMode|CMYKMode|CMYK64Mode|DeepMultichannelMode|DuotoneMode|Duotone16Mode|GrayScaleMode|Gray16Mode|HSBMode|HSLMode|IndexedColorMode|MultichannelMode|RGBMode|RGB48Mode|LabMode|Lab48Mode|cancelevent|initevent|keyevents|NoTitleBar|FlatImageNoSelection|FlatImageWithSelection|FloatingSelection|EditableTransparencyNoSelection|EditableTransparencyWithSelection|ProtectedTransparencyNoSelection|ProtectedTransparencyWithSelection|inCantFilter|inStraightData|inBlackMat|inGrayMat|inWhiteMat|inDefringe|inBlackZap|inGrayZap|inWhiteZap|inBackgroundZap|inForegroundZap|outCantFilter|outStraightData|outBlackMat|outGrayMat|outWhiteMat|outFillMask|copySourceToDestination|doNotCopySourceToDestination|doesNotWorkWithBlankData|worksWithBlankData|doesNotFilterLayerMasks|filtersLayerMasks|doesNotWriteOutsideSelection|writesOutsideSelection)\b</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>support.function.source.ffp</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>Functions provided by the framework/library.</string>
+			<key>match</key>
+			<string>(abort|abs|acos|add|allocArray|allocArrayPad|appendEllipsis|asin|atan|Aval|bCircle|blend|bRect|bRect2|bTriangle|Bval|c2d|c2m|calcSBD|callLib|calloc|ceil|checkCtlFocus|chk|chooseColor|clearCtlProperties|clearDialogStyle|clearDialogStyleEx|clearerr|clock|cnv|cnvX|cnvY|COLOR|copyArray|cos|cosh|cosineInterpolate|createCircularRgn|createClientRgn|createCtl|createDialogRgn|createEllipticRgn|createMenu|createMenubarRgn|createPolyRgn|createPopupMenu|createRectRgn|createRoundRectRgn|createStatusbarRgn|createTitlebarRgn|ctlEnabled|ctl|cubicInterpolate|deleteCtl|deleteRegSubKey|deleteRegValue|destroyMenu|dif|doAction|doEvents|egm|egw|enableCtl|enableCtl|endSetPixel|enumRegSubKey|enumRegValue|Error|ErrorOk|exp|expand|fabs|fclose|fcloseall|fcos|feof|ferror|fflush|fgetc|fgetpos|fgets|fillArray|findClose|findFirstFile|findNextFile|floor|flushall|fmax|fmin|fmod|fopen|formatString|fprintf|fputc|fputs|fread|free|freeArray|freeSBD|freopen|fscanf|fseek|fsetpos|fsin|ftan|ftell|fwrite|gamma|getArray|getArrayAddress|getArrayDim|getArrayString|getAsyncKeyState|getBufferAddress|getc|getCtlClass|getCtlColor|getCtlCoord|getCtlPos|getCtlProperties|getCtlRange|getCtlText|getCtlVal|getDialogHeight|getDialogWidth|getDisplaySettings|getImageTitle|getLibFn|getLocaleInfo|getOpenFileName|getPixel|getPreviewCoordX|getPreviewCoordY|getPreviewCursor|getRegData|getRegInt|getRegPath|getRegRoot|getRegString|getSaveFileName|getSBD|getSBDangle|getSBDX|getSBDY|getSpecialFolder|getSystemDefaultLCID|getUserDefaultLCID|getWindowsVersion|get|grad2D|Gval|HDBUsToPixels|hermiteInterpolate|hsl2rgb|hypot|iget|imageHRes|imageVRes|in|Info|insertMenuItem|iuv2rgb|lab2rgb|ldexp|linearInterpolate|loadLib|lockWindow|log|log10|malloc|max|memccpy|memchr|memcmp|memcpy|memicmp|memmove|memset|min|mix|mix1|mix2|mkdir|mouseOverWhenInvisible|msgBox|msize|msk|pget|pgetp|pgetr|PixelsToHDBUs|PixelsToVDBUs|playSoundWave|playSoundWaveLoop|playSoundWaveSync|pointer_to_buffer|posterize|pow|printf|pset|psetp|psetr|putArray|putArrayString|putc|putRegData|putRegInt|putRegString|put|quickFill|quickMedian|quickSort|r2x|r2y|rad|rand|realloc|refreshCtl|refreshRgn|refreshWindow|requestRect|remove|rename|restoreRect|rewind|RGB|rgb2hsl|rgb2iuv|rgb2lab|rgb2ycbcr|RGBA|rmdir|rnd|rst|Rval|saturation|scl|scrollPreview|set_bitdepth_mode|set_psetp_mode|setClickDrag|setCtlAction|setCtlColor|setCtlDivisor|setCtlEditSize|setCtlFocus|setCtlFontColor|setCtlGamma|setCtlImage|setCtlLineSize|setCtlPageSize|setCtlPos|setCtlProperties|setCtlRange|setCtlText|setCtlTextv|setCtlTheme|setCtlToolTip|setCtlVal|setDialogColor|setDialogDragMode|setDialogGradient|setDialogImage|setDialogImageMode|setDialogMinMax|setDialogMode|setDialogPos|setDialogRegion|setDialogShowState|setDialogSizeGrip|setDialogStyle|setDialogStyleEx|setDialogText|setDialogTextv|setDialogTheme|setEllipse|setEllipseFill|setFill|setFont|setGamma|setLine|setMenu|setPixel|setRectFrame|setRectFill|setRegPath|setRegRoot|setTimerEvent|setZoom|shellExec|sin|sinbell|sinh|sleep|snprintf|sprintf|sqr|sqrt|srand|src|srcp|sscanf|startSetPixel|strcat|strchr|strcmp|strcoll|strcpy|strcspn|strdate|strdup|strerror|stricmp|stricoll|stripEllipsis|strlen|strlwr|strncat|strncmp|strncoll|strncpy|strnicmp|strnicoll|strnset|strpbrk|strrchr|strrev|strset|strspn|strstr|strtime|strtod|strtok|strtol|strtoul|strupr|strxfrm|sub|t2get|t2getp|t2getr|t2set|t2setp|t2setr|t3get|t3getp|t3getr|t3set|t3setp|t3setr|tan|tanh|testAbort|tget|tgetp|tgetr|time|tmpfile|tmpnam|trackPopupMenu|tricos|triggerEvent|tri|tset|tsetp|tsetr|ungetc|updatePreview|updateProgress|val|VDBUsToPixels|Warn|xyzcnv|ycbcr2rgb|YesNo|YesNoCancel)\(</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.source.ffp</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>Mainly related to flow control like continue, while, return, etc.</string>
+			<key>match</key>
+			<string>\s*\b(break|case|continue|default|else|for|if|return|switch|while)\b</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>false language definition</string>
+			<key>match</key>
+			<string>%fml|%ffp|%%EOF</string>
+			<key>name</key>
+			<string>keyword.control.import.source.ffp</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>false language definition</string>
+			<key>match</key>
+			<string>&amp;&amp;|\|\|</string>
+			<key>name</key>
+			<string>keyword.operator.source.ffp</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Reserved language variables like this, super, self, etc.</string>
+			<key>match</key>
+			<string>doingProxy|filterInstallDir|imageHeight|imageMode|imageWidth|planesWithoutAlpha|planes|scaleFactor|x_end|x_start|y_end|y_start</string>
+			<key>name</key>
+			<string>variable.language.source.ffp</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Reserved language variables like this, super, self, etc.</string>
+			<key>match</key>
+			<string>FME_KILLEDITFOCUS|FME_INIT|FME_SETFOCUS|FME_VALUECHANGED</string>
+			<key>name</key>
+			<string>invalid.deprecated.source.ffp</string>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>source.ffp</string>
+	<key>uuid</key>
+	<string>31dda9af-41b2-4f9d-9d55-d27ce84bd43e</string>
+</dict>
+</plist>
